@@ -1,0 +1,4 @@
+name: elux-bootstrap-theme
+services:
+    appserver:
+      type: node:20
