@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELUX Calculators Theme</title>
+    <link rel="stylesheet" href="./dist/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+                /* Minimal CSS Reboot */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: var(--bs-body-font-family, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+            font-size: var(--bs-body-font-size, 1rem);
+            font-weight: var(--bs-body-font-weight, 400);
+            line-height: var(--bs-body-line-height, 1.5);
+            color: var(--bs-body-color, #212529);
+            background-color: var(--bs-body-bg, #fff);
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--bs-link-color, #0d6efd);
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            color: var(--bs-link-hover-color, #0a58ca);
+        }
+        
+        button {
+            border-radius: 0;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            -webkit-appearance: button;
+        }
+        
+        button:focus:not(:focus-visible) {
+            outline: 0;
+        }
+        
+        input, select, textarea {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+        
+        img, svg {
+            vertical-align: middle;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        [hidden] {
+            display: none !important;
+        }
+
+        /* Helper classes per demo */
+        .demo-section { 
+            border-bottom: 1px solid var(--bs-gray-100); 
+        }
+        .color-box {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .spacing-box {
+            background: var(--bs-primary);
+            color: white;
+            display: inline-block;
+        }
+        .shadow-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+<body class="o2000__bg-white">
+
+    <!-- Header -->
+    <header class="o2000__bg-dark o2000__text-white o2000__py-4">
+        <div class="o2000__container">
+            <h1 class="o2000__h3 o2000__mb-0 o2000__text-white">ELUX Calculators Theme</h1>
+        </div>
+    </header>
+
+    
+    
+        <!-- Icone Custom Kit -->
+<section class="demo-section o2000__py-5">
+    <div class="o2000__container">
+        <h2 class="o2000__mb-4">Icone</h2>
+        
+        <!-- Barra di ricerca -->
+        <div class="o2000__row o2000__mb-4">
+            <div class="o2000__col-md-6 o2000__mx-auto">
+                <div class="o2000__input-group">
+                    <span class="o2000__input-group-text">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input 
+                        type="text" 
+                        class="o2000__form-control" 
+                        id="iconSearch" 
+                        placeholder="Cerca icone... (es: arrow, cup, wash)"
+                        autocomplete="off"
+                    >
+                    <button class="o2000__btn o2000__btn-secondary" type="button" id="clearSearch">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <small class="o2000__text-muted o2000__d-block o2000__mt-2">
+                    Totale icone: <span id="iconCount">0</span> | Visibili: <span id="visibleCount">0</span>
+                </small>
+            </div>
+        </div>
+        
+        <!-- Messaggio nessun risultato -->
+        <div class="o2000__row o2000__d-none" id="noResults">
+            <div class="o2000__col-12 o2000__text-center o2000__py-5">
+                <i class="o2000__fak o2000__fa-search o2000__fa-3x o2000__text-muted o2000__mb-3 o2000__d-block"></i>
+                <p class="o2000__text-muted">Nessuna icona trovata per "<span id="searchTerm"></span>"</p>
+            </div>
+        </div>
+        
+       <div class="o2000__row o2000__g-3" id="iconGrid" style="max-height: 500px;overflow: auto;">
+          
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Palette Colori -->
+    <section class="demo-section o2000__py-5">
+        <div class="o2000__container">
+            <h2 class="o2000__mb-4">Palette Colori</h2>
+            
+            <!-- Primary Colors -->
+            <h5 class="o2000__mb-3">Colori Principali</h5>
+            <div class="o2000__row o2000__g-3 o2000__mb-4">
+                <div class="o2000__col-6 o2000__col-md-2">
+                    <div class="color-box o2000__bg-primary o2000__text-white">
+                        Primary<br>#14133B
+                    </div>
+                </div>
+                <div class="o2000__col-6 o2000__col-md-2">
+                    <div class="color-box o2000__bg-secondary o2000__text-dark o2000__border">
+                        Secondary<br>#FFFFFF
+                    </div>
+                </div>
+                <div class="o2000__col-6 o2000__col-md-2">
+                    <div class="color-box o2000__bg-success o2000__text-white">
+                        Success<br>#007D00
+                    </div>
+                </div>
+                <div class="o2000__col-6 o2000__col-md-2">
+                    <div class="color-box o2000__bg-danger o2000__text-white">
+                        Danger<br>#C43434
+                    </div>
+                </div>
+                <div class="o2000__col-6 o2000__col-md-2">
+                    <div class="color-box o2000__bg-warning o2000__text-dark">
+                        Warning<br>#F1C000
+                    </div>
+                </div>
+                <div class="o2000__col-6 o2000__col-md-2">
+                    <div class="color-box o2000__bg-info o2000__text-dark">
+                        Info<br>#C8EFFF
+                    </div>
+                </div>
+            </div>
+
+          <!-- Blue Scale -->
+        <div class="color-section o2000__mb-4">
+            <h5 class="o2000__mb-3">Blue Scale</h5>
+            <div class="o2000__row o2000__g-3">
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #14133B;">
+                        Blue-900<br>#14133B 
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #193471;">
+                        Blue-700<br>#193471
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #1460A9;">
+                        Blue-500<br>#1460A9
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #C8EFFF;">
+                        Blue-50<br>#C8EFFF
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gray Scale -->
+        <div class="color-section o2000__mb-4">
+            <h5 class="o2000__mb-3">Gray Scale</h5>
+            <div class="o2000__row o2000__g-3">
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #4F596D;">
+                        Gray-700<br>#4F596D
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #606C7E;">
+                        Gray-600<br>#606C7E
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #7B8A9C;">
+                        Gray-400<br>#7B8A9C
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #ADB9C3;">
+                        Gray-200<br>#ADB9C3
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #DFE7EA;">
+                        Gray-100<br>#DFE7EA
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #F4F7FA;">
+                        Gray-50<br>#F4F7FA
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #FFFFFF;">
+                        White<br>#FFFFFF
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Red Scale -->
+        <div class="color-section o2000__mb-4">
+            <h5 class="o2000__mb-3">Red Scale</h5>
+            <div class="o2000__row o2000__g-3">
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #86271B;">
+                        Red-800<br>#86271B
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #A42E27;">
+                        Red-700<br>#A42E27
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #C43434;">
+                        Red-600<br>#C43434
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #FFECEF;">
+                        Red-50<br>#FFECEF
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orange Scale -->
+        <div class="color-section o2000__mb-4">
+            <h5 class="o2000__mb-3">Orange Scale</h5>
+            <div class="o2000__row o2000__g-3">
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #BA4A00;">
+                        Orange-900<br>#BA4A00
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #F89017;">
+                        Orange-600<br>#F89017
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yellow Scale -->
+        <div class="color-section o2000__mb-4">
+            <h5 class="o2000__mb-3">Yellow Scale</h5>
+            <div class="o2000__row o2000__g-3">
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #F1C000;">
+                        Yellow-600<br>#F1C000
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #FFFDE7;">
+                        Yellow-50<br>#FFFDE7
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Green Scale -->
+        <div class="color-section">
+            <h5 class="o2000__mb-3">Green Scale</h5>
+            <div class="o2000__row o2000__g-3">
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-white o2000__border" style="background: #007D00;">
+                        Green-800<br>#007D00
+                    </div>
+                </div>
+                <div class="o2000__col-4 o2000__col-md-2">
+                    <div class="color-box o2000__text-dark o2000__border" style="background: #E4EFE4;">
+                        Green-200<br>#E4EFE4
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- Spacing System -->
+    <section class="demo-section o2000__py-5">
+        <div class="o2000__container">
+            <h2 class="o2000__mb-4">Spacing</h2>
+            <div class="o2000__row">
+                <div class="o2000__col-md-6">
+                    <h5 class="o2000__mb-3">Valori Spacing</h5>
+                    <div class="o2000__d-flex o2000__flex-column o2000__gap-2">
+                        <div><span class="spacing-box o2000__p-025">p-025</span> = 1px</div>
+                        <div><span class="spacing-box o2000__p-05">p-05</span> = 2px</div>
+                        <div><span class="spacing-box o2000__p-1">p-1</span> = 4px</div>
+                        <div><span class="spacing-box o2000__p-2">p-2</span> = 8px</div>
+                        <div><span class="spacing-box o2000__p-3">p-3</span> = 12px</div>
+                        <div><span class="spacing-box o2000__p-4">p-4</span> = 16px</div>
+                        <div><span class="spacing-box o2000__p-5">p-5</span> = 20px</div>
+                        <div><span class="spacing-box o2000__p-6">p-6</span> = 24px</div>
+                    </div>
+                </div>
+                <div class="o2000__col-md-6">
+                    <h5 class="o2000__mb-3">Spacing Estesi</h5>
+                    <div class="o2000__d-flex o2000__flex-column o2000__gap-2">
+                        <div><span class="spacing-box o2000__p-8">p-8</span> = 32px</div>
+                        <div><span class="spacing-box o2000__p-10">p-10</span> = 40px</div>
+                        <div><span class="spacing-box o2000__p-12">p-12</span> = 48px</div>
+                        <div><span class="spacing-box o2000__p-16">p-16</span> = 64px</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottoni -->
+    <section class="demo-section o2000__py-5">
+        <div class="o2000__container">
+            <h2 class="o2000__mb-4">Bottoni</h2>
+            
+            <!-- Stati Bottoni -->
+            <div class="o2000__row o2000__g-4">
+                <div class="o2000__col-md-6">
+                    <h5 class="o2000__mb-3">Primary & Secondary</h5>
+                    <div class="o2000__d-flex o2000__flex-wrap o2000__gap-2 o2000__mb-3">
+                        <button class="o2000__btn o2000__btn-primary">Primary Default</button>
+                        <button class="o2000__btn o2000__btn-primary" disabled>Primary Disabled</button>
+                    </div>
+                    <div class="o2000__d-flex o2000__flex-wrap o2000__gap-2">
+                        <button class="o2000__btn o2000__btn-secondary">Secondary Default</button>
+                        <button class="o2000__btn o2000__btn-secondary" disabled>Secondary Disabled</button>
+                    </div>
+                </div>
+                <div class="o2000__col-md-6">
+                    <h5 class="o2000__mb-3">Danger & Link</h5>
+                    <div class="o2000__d-flex o2000__flex-wrap o2000__gap-2 o2000__mb-3">
+                        <button class="o2000__btn o2000__btn-danger">Danger Primary</button>
+                        <button class="o2000__btn o2000__btn-danger" disabled>Danger Primary</button>
+                    </div>
+                    <div class="o2000__d-flex o2000__flex-wrap o2000__gap-2 o2000__mb-3">
+                        <button class="o2000__btn o2000__btn-outline-danger o2000__btn-hug">Danger Secondary</button>
+                        <button class="o2000__btn o2000__btn-outline-danger" disabled>Danger Secondary</button>
+                    </div>
+                    <div class="o2000__d-flex o2000__flex-wrap o2000__gap-2">
+                        <button class="o2000__btn o2000__btn-link">Link Default</button>
+                        <button class="o2000__btn o2000__btn-link" disabled>Link Disabled</button>
+                    </div>
+                </div>
+                   <div class="o2000__col-md-6">
+                    <h5 class="o2000__mb-3">Icon</h5>
+                    <div class="o2000__d-flex o2000__flex-wrap o2000__gap-2 o2000__mb-3">
+                        <button class="o2000__btn o2000__btn-icon">Default</button>
+                        <button class="o2000__btn o2000__btn-glossary">Glossary</button>
+                    </div>
+            
+                </div>
+            </div>
+
+            <!-- Dimensioni -->
+            <h5 class="o2000__mt-4 o2000__mb-3">Dimensioni</h5>
+            <div class="o2000__d-flex o2000__align-items-center o2000__gap-2">
+                <button class="o2000__btn o2000__btn-primary o2000__btn-sm">Small</button>
+                <button class="o2000__btn o2000__btn-primary">Normal</button>
+                <button class="o2000__btn o2000__btn-primary o2000__btn-lg">Large</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Forms -->
+    <section class="demo-section o2000__py-5">
+        <div class="o2000__container">
+            <h2 class="o2000__mb-4">Form Controls</h2>
+            <div class="o2000__row o2000__g-4">
+                <div class="o2000__col-md-3">
+                    <label class="o2000__form-label">Normal</label>
+                    <input type="text" class="o2000__form-control" placeholder="Input normale">
+                </div>
+                <div class="o2000__col-md-3">
+                    <label class="o2000__form-label">Focus</label>
+                    <input type="text" class="o2000__form-control" placeholder="Clicca per focus">
+                </div>
+                <div class="o2000__col-md-3">
+                    <label class="o2000__form-label">Error</label>
+                    <input type="text" class="o2000__form-control o2000__is-invalid" value="Valore errato">
+                    <div class="o2000__invalid-feedback">Messaggio di errore</div>
+                </div>
+                <div class="o2000__col-md-3">
+                    <label class="o2000__form-label">Disabled</label>
+                    <input type="text" class="o2000__form-control" disabled placeholder="Disabilitato">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shadows -->
+    <section class="demo-section o2000__py-5">
+        <div class="o2000__container">
+            <h2 class="o2000__mb-4">Ombre</h2>
+            <div class="o2000__row o2000__g-4">
+                <div class="o2000__col-md-4">
+                    <div class="shadow-box o2000__shadow-sm">
+                        <h6 class="o2000__mb-2">Shadow Small</h6>
+                        <p class="o2000__mb-0 o2000__small o2000__text-muted">Android style con border</p>
+                    </div>
+                </div>
+                <div class="o2000__col-md-4">
+                    <div class="shadow-box o2000__shadow">
+                        <h6 class="o2000__mb-2">Shadow Normal</h6>
+                        <p class="o2000__mb-0 o2000__small o2000__text-muted">iOS style (Gray-700 70%)</p>
+                    </div>
+                </div>
+                <div class="o2000__col-md-4">
+                    <div class="shadow-box o2000__shadow-lg">
+                        <h6 class="o2000__mb-2">Shadow Large</h6>
+                        <p class="o2000__mb-0 o2000__small o2000__text-muted">Per elementi prominenti</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Typography -->
+    <section class="demo-section o2000__py-5">
+        <div class="o2000__container">
+            <h2 class="o2000__mb-4">Tipografia</h2>
+            <div class="o2000__row">
+                <div class="o2000__col-md-6">
+                    <h1 class="o2000__h1">Heading 1 (40px)</h1>
+                    <h2 class="o2000__h2">Heading 2 (32px)</h2>
+                    <h3 class="o2000__h3">Heading 3 (24px)</h3>
+                    <h4 class="o2000__h4">Heading 4 (20px)</h4>
+                    <h5 class="o2000__h5">Heading 5 (18px)</h5>
+                    <h6 class="o2000__h6">Heading 6 (16px)</h6>
+                </div>
+                <div class="o2000__col-md-6">
+                    <p class="o2000__lead">Lead paragraph con font-size aumentato</p>
+                    <p>Paragrafo normale con <strong>testo bold</strong> e <em>testo italic</em></p>
+                    <p class="o2000__text-muted">Testo muted (Content/Alternative)</p>
+                    <p><a href="#" class="o2000__link-primary">Link con colore primary</a></p>
+                    <p><small class="o2000__text-muted">Small text con colore muted</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="o2000__bg-dark o2000__text-white o2000__py-5 o2000__mt-5">
+        <div class="o2000__container">
+            <p class="o2000__mb-0">ELUX Calculators Theme</p>
+        </div>
+    </footer>
+
+
+
+<script>
+// Lista completa delle icone
+const icons = [
+    'add', 'alarm-clock', 'alert-fill', 'alert-outline', 'arrow-down', 'arrow-left',
+    'arrow-leftdown', 'arrow-leftup', 'arrow-right', 'arrow-rightdown', 'arrow-rightup',
+    'arrow-up', 'attention', 'backspace', 'backup', 'bed', 'bluetooth',
+    'bluetooth-disconnected', 'boiling', 'braising', 'build', 'calendar', 'calendar-today',
+    'calibration', 'caret-down', 'caret-left', 'caret-right', 'caret-up', 'chat',
+    'chemical', 'cleaning', 'cleaning-standby', 'close', 'cloud', 'cloud-disconnected',
+    'coffe', 'coffe-clean', 'coffe-milk', 'coffe-milk-clean', 'coffe-recipe', 'coin',
+    'confirm', 'connectivity', 'cook', 'cooking-assisted', 'cooking-manual', 'cooling',
+    'copy', 'crockery-insulated', 'cup', 'cup-full', 'cup-full-2', 'cup-half',
+    'cup-half-2', 'cups', 'cups-full', 'cups-full-2', 'cups-half', 'cups-half-2',
+    'database', 'deep-frying', 'detergent', 'dirty-shirt-basket', 'download',
+    'drain-close', 'drain-open', 'drain-water', 'dryer', 'eco', 'edit', 'energy',
+    'equal', 'export', 'external-link', 'fan', 'fast', 'favorite', 'frying-basket',
+    'glasses', 'globe', 'grilling', 'grinder', 'grinder-calibration', 'heat-high',
+    'heat-low', 'heat-medium', 'heat-no', 'hold', 'icon-badge', 'image', 'import',
+    'infinite', 'info-circle', 'instructions', 'iron', 'keyboard-delete', 'language',
+    'link', 'list', 'list-add', 'load-water', 'location', 'locked', 'logout',
+    'mail-closed', 'main-wash', 'maintenance', 'maximize', 'menu', 'menu-service',
+    'milk', 'milk-clean', 'minimize', 'mix-wash', 'mix-wash-2', 'mix-wash-2-intensive',
+    'mix-wash-3', 'mix-wash-3-intensive', 'more-horizontal', 'more-vertical',
+    'note-add', 'notification', 'off', 'open-close-lid', 'overview', 'parameters',
+    'password', 'pasta-cooking', 'pause', 'pause-fill', 'phone', 'pillow',
+    'placeholder', 'play', 'play-fill', 'plus-minus', 'power-level-0', 'power-level-1',
+    'power-level-2', 'power-level-3', 'pre-heating', 'pre-rinse', 'pre-wash',
+    'preheating-skip', 'pressure', 'probe', 'program-custom-washing', 'program-two',
+    'qr-code', 'question-circle', 'refresh', 'remote', 'remove', 'reset', 'rinse',
+    'rinse-aid', 'save', 'search', 'settings', 'shallow-frying', 'shop', 'skip',
+    'skip-fill', 'smartphone', 'soft-cooking', 'soluble', 'sous-vide', 'stain',
+    'star', 'star-fill', 'steam', 'stop', 'stop-fill', 't-shirt', 'tank-inclination',
+    'temperature', 'test', 'time', 'trays-eco', 'trays-heavy', 'trays-light',
+    'undercounter', 'unlocked', 'upload', 'usb', 'usb-insert', 'usb-remove', 'user',
+    'user-manager', 'user-operator', 'user-technician', 'visibility-off',
+    'visibility-on', 'warmup-water', 'wash', 'wash-towel', 'washer', 'water',
+    'water-fill', 'water-gun', 'water-gun-disabled', 'weight', 'wifi-4', 'delete'
+];
+
+// Funzione per creare un elemento icona
+function createIconElement(iconName) {
+    const div = document.createElement('div');
+    div.className = 'o2000__col-6 o2000__col-sm-4 o2000__col-md-3 o2000__col-lg-2 o2000__text-center icon-item';
+    div.setAttribute('data-icon-name', iconName);
+    
+    div.innerHTML = `
+        <i class="o2000__fak o2000__fa-${iconName} o2000__fa-2x o2000__mb-2 o2000__d-block"></i>
+        <small class="o2000__text-muted">${iconName}</small>
+    `;
+    
+    return div;
+}
+
+// Inizializza la griglia delle icone
+function initializeIconGrid() {
+    const grid = document.getElementById('iconGrid');
+    icons.forEach(icon => {
+        grid.appendChild(createIconElement(icon));
+    });
+    updateCounts();
+}
+
+// Aggiorna i contatori
+function updateCounts() {
+    const totalIcons = icons.length;
+    const visibleIcons = document.querySelectorAll('.icon-item:not(.o2000__d-none)').length;
+    
+    document.getElementById('iconCount').textContent = totalIcons;
+    document.getElementById('visibleCount').textContent = visibleIcons;
+}
+
+// Funzione di ricerca
+function searchIcons(searchTerm) {
+    const normalizedSearch = searchTerm.toLowerCase().trim();
+    const iconItems = document.querySelectorAll('.icon-item');
+    const noResults = document.getElementById('noResults');
+    const searchTermSpan = document.getElementById('searchTerm');
+    
+    let visibleCount = 0;
+    
+    iconItems.forEach(item => {
+        const iconName = item.getAttribute('data-icon-name');
+        
+        if (normalizedSearch === '' || iconName.includes(normalizedSearch)) {
+            item.classList.remove('o2000__d-none');
+            visibleCount++;
+        } else {
+            item.classList.add('o2000__d-none');
+        }
+    });
+    
+    // Mostra/nascondi messaggio "nessun risultato"
+    if (visibleCount === 0 && normalizedSearch !== '') {
+        noResults.classList.remove('o2000__d-none');
+        searchTermSpan.textContent = searchTerm;
+        document.getElementById('iconGrid').classList.add('o2000__d-none');
+    } else {
+        noResults.classList.add('o2000__d-none');
+        document.getElementById('iconGrid').classList.remove('o2000__d-none');
+    }
+    
+    updateCounts();
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Inizializza la griglia
+    initializeIconGrid();
+    
+    // Input di ricerca
+    const searchInput = document.getElementById('iconSearch');
+    const clearButton = document.getElementById('clearSearch');
+    
+    // Ricerca in tempo reale
+    searchInput.addEventListener('input', function(e) {
+        searchIcons(e.target.value);
+        
+        // Mostra/nascondi bottone clear
+        if (e.target.value) {
+            clearButton.style.opacity = '1';
+            clearButton.style.pointerEvents = 'auto';
+        } else {
+            clearButton.style.opacity = '0';
+            clearButton.style.pointerEvents = 'none';
+        }
+    });
+    
+    // Bottone clear
+    clearButton.addEventListener('click', function() {
+        searchInput.value = '';
+        searchIcons('');
+        this.style.opacity = '0';
+        this.style.pointerEvents = 'none';
+        searchInput.focus();
+    });
+    
+    // Inizializza stato bottone clear
+    clearButton.style.opacity = '0';
+    clearButton.style.pointerEvents = 'none';
+    clearButton.style.transition = 'opacity 0.2s';
+});
+</script>
+</body>
+</html>

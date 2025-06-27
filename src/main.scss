@@ -1,0 +1,62 @@
+// Variabili personalizzate
+@import './styles/variables';
+
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// Core: Variabili, Mixins e Mappe (già hai functions e variables sopra)
+@import "bootstrap/scss/maps";        // Genera le mappe derivate dai colori
+@import "bootstrap/scss/mixins";      // Tutti i mixin di Bootstrap
+@import "bootstrap/scss/utilities";   // IMPORTANTE: Definisce $utilities
+@import "bootstrap/scss/root";        // Variabili CSS custom (:root)
+
+// Base
+@import "bootstrap/scss/images";      // Stili per immagini
+@import "bootstrap/scss/containers";  // Container layout
+@import "bootstrap/scss/grid";        // Sistema griglia
+
+// Componenti (puoi commentare quelli che non usi)
+// @import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";       // Tutti i form controls
+@import "bootstrap/scss/buttons";     // Bottoni
+@import "bootstrap/scss/transitions"; // Transizioni
+// @import "bootstrap/scss/dropdown";    // Dropdown menus
+// @import "bootstrap/scss/button-group"; // Gruppi di bottoni
+// @import "bootstrap/scss/nav";         // Navigation base
+// @import "bootstrap/scss/navbar";      // Navbar component
+// @import "bootstrap/scss/card";        // Cards
+// @import "bootstrap/scss/accordion";   // Accordion/collapse
+// @import "bootstrap/scss/breadcrumb";  // Breadcrumbs
+// @import "bootstrap/scss/pagination";  // Paginazione
+// @import "bootstrap/scss/badge";       // Badges
+// @import "bootstrap/scss/alert";       // Alert messages
+// @import "bootstrap/scss/progress";    // Progress bars
+// @import "bootstrap/scss/list-group";  // List groups
+// @import "bootstrap/scss/close";       // Close button
+// @import "bootstrap/scss/toasts";      // Toast notifications
+@import "bootstrap/scss/modal";       // Modals
+// @import "bootstrap/scss/tooltip";     // Tooltips
+// @import "bootstrap/scss/popover";     // Popovers
+// @import "bootstrap/scss/carousel";    // Carousel/slider
+// @import "bootstrap/scss/spinners";    // Loading spinners
+// @import "bootstrap/scss/offcanvas";   // Off-canvas panels
+// @import "bootstrap/scss/placeholders"; // Skeleton screens
+
+// Helpers & Utilities
+@import "bootstrap/scss/helpers";     // Helper classes
+@import "bootstrap/scss/utilities/api"; // Utility classes
+
+// Icone personalizzate
+@import './styles/fontawesome/custom-icons.scss'; 
+
+// classi custom
+@import './styles/buttons.scss'; 
+@import './styles/typography.scss'; 
+
+
+
+
+
+
+

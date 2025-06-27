@@ -1,0 +1,266 @@
+// variables
+// --------------------------
+
+$fa-css-prefix            : fa !default;
+$fa-style                 : 900 !default;
+$fa-style-family          : "Font Awesome 6 Pro" !default;
+
+$fa-icon-property         : --fa;
+$fa-duotone-icon-property : --fa--fa;
+
+$fa-display               : inline-block !default;
+
+$fa-fw-width              : fa-divide(20em, 16) !default;
+$fa-inverse               : #fff !default;
+
+$fa-border-color          : #eee !default;
+$fa-border-padding        : .2em .25em .15em !default;
+$fa-border-radius         : .1em !default;
+$fa-border-style          : solid !default;
+$fa-border-width          : .08em !default;
+
+$fa-size-scale-2xs        : 10 !default;
+$fa-size-scale-xs         : 15 !default;
+$fa-size-scale-sm         : 18 !default;
+$fa-size-scale-base       : 24 !default;
+$fa-size-scale-lg         : 32 !default;
+$fa-size-scale-xl         : 48 !default;
+$fa-size-scale-2xl        : 64 !default;
+
+$fa-sizes: (
+  "2xs"                   : $fa-size-scale-2xs,
+  "xs"                    : $fa-size-scale-xs,
+  "sm"                    : $fa-size-scale-sm,
+  "lg"                    : $fa-size-scale-lg,
+  "xl"                    : $fa-size-scale-xl,
+  "2xl"                   : $fa-size-scale-2xl
+) !default;
+
+$fa-li-width              : 2em !default;
+$fa-li-margin             : $fa-li-width * fa-divide(5, 4) !default;
+
+$fa-pull-margin           : .3em !default;
+
+$fa-primary-opacity       : 1 !default;
+$fa-secondary-opacity     : .4 !default;
+
+$fa-stack-vertical-align  : middle !default;
+$fa-stack-width           : ($fa-fw-width * 2) !default;
+$fa-stack-z-index         : auto !default;
+
+$fa-font-display          : block !default;
+$fa-font-path: './fonts' !default;
+
+
+
+$fa-icons: (
+);
+
+$fa-brand-icons: (
+);
+
+$fa-custom-icons: (
+  add: "\e04c",
+  alarm-clock: "\e04d",
+  alert-fill: "\e04e",
+  alert-outline: "\e04f",
+  arrow-down: "\e050",
+  arrow-left: "\e051",
+  arrow-leftdown: "\e052",
+  arrow-leftup: "\e053",
+  arrow-right: "\e054",
+  arrow-rightdown: "\e055",
+  arrow-rightup: "\e056",
+  arrow-up: "\e057",
+  attention: "\e058",
+  backspace: "\e059",
+  backup: "\e000",
+  bed: "\e05a",
+  bluetooth: "\e05b",
+  bluetooth-disconnected: "\e05c",
+  boiling: "\e020",
+  braising: "\e021",
+  build: "\e05d",
+  calendar: "\e05e",
+  calendar-today: "\e05f",
+  calibration: "\e060",
+  caret-down: "\e061",
+  caret-left: "\e062",
+  caret-right: "\e063",
+  caret-up: "\e064",
+  chat: "\e065",
+  chemical: "\e066",
+  cleaning: "\e001",
+  cleaning-standby: "\e002",
+  close: "\e067",
+  cloud: "\e068",
+  cloud-disconnected: "\e069",
+  coffe: "\e037",
+  coffe-clean: "\e038",
+  coffe-milk: "\e039",
+  coffe-milk-clean: "\e03a",
+  coffe-recipe: "\e03b",
+  coin: "\e06a",
+  confirm: "\e06b",
+  connectivity: "\e06c",
+  cook: "\e022",
+  cooking-assisted: "\e023",
+  cooking-manual: "\e024",
+  cooling: "\e003",
+  copy: "\e06d",
+  crockery-insulated: "\e004",
+  cup: "\e03c",
+  cup-full: "\e03d",
+  cup-full-2: "\e03e",
+  cup-half: "\e03f",
+  cup-half-2: "\e040",
+  cups: "\e041",
+  cups-full: "\e042",
+  cups-full-2: "\e043",
+  cups-half: "\e044",
+  cups-half-2: "\e045",
+  database: "\e06e",
+  deep-frying: "\e025",
+  detergent: "\e005",
+  dirty-shirt-basket: "\e06f",
+  download: "\e070",
+  drain-close: "\e026",
+  drain-open: "\e027",
+  drain-water: "\e006",
+  dryer: "\e007",
+  eco: "\e071",
+  edit: "\e072",
+  energy: "\e073",
+  equal: "\e074",
+  export: "\e075",
+  external-link: "\e076",
+  fan: "\e028",
+  fast: "\e077",
+  favorite: "\e078",
+  frying-basket: "\e029",
+  glasses: "\e008",
+  globe: "\e079",
+  grilling: "\e02a",
+  grinder: "\e046",
+  grinder-calibration: "\e047",
+  heat-high: "\e07a",
+  heat-low: "\e07b",
+  heat-medium: "\e07c",
+  heat-no: "\e07d",
+  hold: "\e02b",
+  icon-badge: "\e07e",
+  image: "\e07f",
+  import: "\e080",
+  infinite: "\e081",
+  info-circle: "\e082",
+  instructions: "\e083",
+  iron: "\e084",
+  keyboard-delete: "\e085",
+  language: "\e086",
+  link: "\e087",
+  list: "\e088",
+  list-add: "\e089",
+  load-water: "\e009",
+  location: "\e08a",
+  locked: "\e08b",
+  logout: "\e08c",
+  mail-closed: "\e08d",
+  main-wash: "\e00a",
+  maintenance: "\e08e",
+  maximize: "\e08f",
+  menu: "\e090",
+  menu-service: "\e091",
+  milk: "\e048",
+  milk-clean: "\e049",
+  minimize: "\e092",
+  mix-wash: "\e00b",
+  mix-wash-2: "\e00c",
+  mix-wash-2-intensive: "\e00d",
+  mix-wash-3: "\e00e",
+  mix-wash-3-intensive: "\e00f",
+  more-horizontal: "\e093",
+  more-vertical: "\e094",
+  note-add: "\e095",
+  notification: "\e096",
+  off: "\e097",
+  open-close-lid: "\e02c",
+  overview: "\e098",
+  parameters: "\e099",
+  password: "\e09a",
+  pasta-cooking: "\e02d",
+  pause: "\e09b",
+  pause-fill: "\e09c",
+  phone: "\e09d",
+  pillow: "\e09e",
+  placeholder: "\e09f",
+  play: "\e0a0",
+  play-fill: "\e0a1",
+  plus-minus: "\e0a2",
+  power-level-0: "\e0a3",
+  power-level-1: "\e0a4",
+  power-level-2: "\e0a5",
+  power-level-3: "\e0a6",
+  pre-heating: "\e02e",
+  pre-rinse: "\e010",
+  pre-wash: "\e011",
+  preheating-skip: "\e02f",
+  pressure: "\e030",
+  probe: "\e031",
+  program-custom-washing: "\e012",
+  program-two: "\e013",
+  qr-code: "\e0a7",
+  question-circle: "\e0a8",
+  refresh: "\e0a9",
+  remote: "\e0aa",
+  remove: "\e0ab",
+  reset: "\e0ac",
+  rinse: "\e014",
+  rinse-aid: "\e015",
+  save: "\e0ad",
+  search: "\e0ae",
+  settings: "\e0af",
+  shallow-frying: "\e032",
+  shop: "\e0b0",
+  skip: "\e0b1",
+  skip-fill: "\e0b2",
+  smartphone: "\e0b3",
+  soft-cooking: "\e033",
+  soluble: "\e04a",
+  sous-vide: "\e034",
+  stain: "\e016",
+  star: "\e0b4",
+  star-fill: "\e0b5",
+  steam: "\e04b",
+  stop: "\e0b6",
+  stop-fill: "\e0b7",
+  t-shirt: "\e0bb",
+  tank-inclination: "\e035",
+  temperature: "\e0b8",
+  test: "\e0b9",
+  time: "\e0ba",
+  trays-eco: "\e017",
+  trays-heavy: "\e018",
+  trays-light: "\e019",
+  undercounter: "\e01a",
+  unlocked: "\e0bc",
+  upload: "\e0bd",
+  usb: "\e0be",
+  usb-insert: "\e0bf",
+  usb-remove: "\e0c0",
+  user: "\e0c1",
+  user-manager: "\e0c2",
+  user-operator: "\e0c3",
+  user-technician: "\e0c4",
+  visibility-off: "\e0c5",
+  visibility-on: "\e0c6",
+  warmup-water: "\e01b",
+  wash: "\e01c",
+  wash-towel: "\e0c7",
+  washer: "\e01e",
+  water: "\e0c8",
+  water-fill: "\e036",
+  water-gun: "\e01d",
+  water-gun-disabled: "\e01f",
+  weight: "\e0c9",
+  wifi-4: "\e0ce",
+);

@@ -1,0 +1,160 @@
+
+// ===================================
+// BOTTONI
+// ===================================
+
+// Mixin per le varianti fill/hug
+@mixin button-fill-hug-variants() {
+  
+  // FILL - riempie il container
+  &.btn-fill {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; // spazio tra icona e testo
+  }
+}
+
+
+// BTN SECONDARY
+.btn-secondary {
+  border-color: $blue-900 !important;
+  @include button-fill-hug-variants();
+  
+  &:hover {
+    border-color: $blue-900 !important;
+  }
+  
+  &:focus,
+  &:active {
+    border-color: $blue-900 !important;
+  }
+
+  &:active {
+    background-color: $gray-100 !important;
+  }
+
+  &:disabled {
+    border-color: $gray-50 !important;
+    background-color: $gray-50 !important;
+    color: $gray-200 !important;
+  }
+}
+
+// BTN PRIMARY
+.btn-primary {
+  @include button-fill-hug-variants();
+  
+  &:active {
+    background-color: $blue-500 !important;
+    border-color: $blue-500 !important;
+  }
+
+  &:disabled {
+    border-color: $gray-50 !important;
+    background-color: $gray-50 !important;
+    color: $gray-200 !important;
+  }
+}
+
+// BTN DANGER
+.btn-danger {
+  @include button-fill-hug-variants();
+  
+  &:hover {
+    background-color: $red-600 !important;
+    border-color: $red-600 !important;
+  }
+
+  &:active {
+    background-color: $red-800 !important;
+    border-color: $red-800 !important;
+  }
+
+  &:disabled {
+    border-color: $gray-50 !important;
+    background-color: $gray-50 !important;
+    color: $gray-200 !important;
+  }
+}
+
+// BTN OUTLINE DANGER
+.btn-outline-danger {
+  @include button-fill-hug-variants();
+  
+  &:hover {
+    background-color: $white !important;
+    color: $red-600 !important;
+  }
+
+  &:active {
+    background-color: $gray-100 !important;
+    color: $red-600 !important;
+  }
+
+  &:disabled {
+    border-color: $gray-50 !important;
+    background-color: $gray-50 !important;
+    color: $gray-200 !important;
+  }
+}
+
+// BTN LINK
+.btn-link {
+  text-decoration: underline;
+  color: $blue-900 !important;
+  @include button-fill-hug-variants();
+
+  &:hover {
+    background-color: $white !important;
+    color: $blue-900 !important;
+  }
+
+  &:active {
+    background-color: unset !important;
+    color: $blue-500 !important;
+  }
+
+  &:disabled {
+    border-color: $white !important;
+    background-color: $white !important;
+    color: $gray-200 !important;
+  }
+}
+
+//  BTN-ICON
+.btn-icon {
+  border: 1px solid transparent !important;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+  
+
+  &:hover, &:active {
+    background-color: $gray-50 !important;
+    border: 1px solid $gray-100 !important;
+    color: $blue-900 !important;
+  }
+
+
+
+}
+.btn-glossary {
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+  
+
+  &:hover, &:active {
+    background-color: $blue-900 !important;
+    color: $white !important;
+  }
+
+
+
+}

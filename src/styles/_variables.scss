@@ -1,0 +1,424 @@
+// =================================
+// OVERRIDE VARIABILI BOOTSTRAP
+// =================================
+
+// 1. NUOVA PALETTE COLORI
+
+// Blue scale
+$blue-900: #14133B;
+$blue-700: #193471;
+$blue-500: #1460A9;
+$blue-300: #32A2E1;
+$blue-200: #76CEFF;
+$blue-50: #C8EFFF;
+
+// Gray scale  
+$gray-700: #4F596D;
+$gray-600: #606C7E;
+$gray-400: #7B8A9C;
+$gray-200: #ADB9C3;
+$gray-100: #DFE7EA;
+$gray-50: #F4F7FA;
+$white: #FFFFFF;
+
+// Red scale
+$red-800: #86271B;
+$red-700: #A42E27;
+$red-600: #C43434;
+$red-50: #FFECEF;
+
+// Orange scale
+$orange-900: #BA4A00;
+$orange-600: #F89017;
+
+// Yellow scale
+$yellow-600: #F1C000;
+$yellow-50: #FFFDE7;
+
+// Green scale
+$green-800: #007D00;
+$green-200: #81D96B;
+
+// Teal scale
+$teal-100: #B5E5E5;
+
+// Purple scale
+$purple-300: #BE5EFF;
+
+// Black
+$black: #000;
+
+
+
+// 2. COLORI TEMA BOOTSTRAP usando la semantica
+$primary: $blue-900;        // Button/Primary/Background-Default
+$secondary: $white;         // Button/Secondary/Background-Default
+$success: $green-800;       // Content/Solved
+$info: $blue-50;           // Banner/Informative/Background
+$warning: $yellow-600;      // Content/Warning
+$danger: $red-600;          // Content/Danger
+$light: $gray-50;          // Layer/Variant1/Background-Default
+$dark: $blue-900;          // Content/Default
+
+
+
+
+// 4. COLORI CORPO DOCUMENTO - Semantica Template
+$body-bg: $white;           // Template/Background
+$body-color: $blue-900;     // Content/Default
+
+// 5. COLORI LINK
+$link-color: $blue-900;     // Tertiary button style
+$link-decoration: none;
+$link-hover-color: $blue-500;   // Button/Tertiary/Content-Pressed
+$link-hover-decoration: underline;
+
+// 6. TIPOGRAFIA
+$font-family-sans-serif: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "Noto Sans Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Font sizes base
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-sm: 0.875rem;
+
+// Headings
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base * 1.125;
+$h6-font-size: $font-size-base;
+
+// Font weights
+$font-weight-lighter: 300;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+
+// Line heights
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 1.6;
+
+// Headings styling - Semantica Content/Alternative
+$headings-margin-bottom: 0.5rem;
+$headings-font-family: $font-family-sans-serif;
+$headings-font-style: null;
+$headings-font-weight: 600;
+$headings-line-height: 1.2;
+$headings-color: $blue-900;      // Content/Alternative
+
+// Display headings
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+);
+
+$display-font-family: $font-family-sans-serif;
+$display-font-style: null;
+$display-font-weight: 700;
+$display-line-height: $headings-line-height;
+
+// Testo
+$lead-font-size: $font-size-base * 1.25;
+$lead-font-weight: 400;
+$small-font-size: 0.875em;
+$text-muted: $gray-700;          // Content/Alternative
+
+// 7. SPAZIATURE
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  "025": 1px,           // ← AGGIUNTO
+  "05": 2px,            // ← AGGIUNTO  
+  1: $spacer/4,
+  2: $spacer * 2/4,
+  3: $spacer * 3/4,
+  4: $spacer * 4/4,
+  5: $spacer * 5/4,
+  6: $spacer * 6/4,
+  8: $spacer * 8/4 ,
+  10: $spacer * 10/4,
+  12: $spacer * 12/4,
+  16: $spacer * 16/4,
+);
+
+// 8. BORDI - Semantica Layer/Border
+$border-width: 1px;
+$border-color: $gray-100;        // Separator/Default
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-pill: 50rem;
+
+// 9. OMBRE - Sistema di shadows personalizzato
+// Ombre base
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.1);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.15);
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075);
+
+// Ombre specifiche dal design system
+$shadow-ios: 0 2px 8px rgba($gray-700, 0.7);           // Shadow/iOS per componenti overlay
+$shadow-android: 0 3px 6px rgba($black, 0.16);         // Shadow/Android elevation 3
+$shadow-android-border: $gray-100;                      // Border per Android shadow
+
+// Ombre per componenti specifici
+$dropdown-box-shadow: $shadow-ios;
+$popover-box-shadow: $shadow-ios;
+$modal-content-box-shadow-xs: $shadow-android;
+$modal-content-box-shadow-sm-up: $shadow-ios;
+$toast-box-shadow: $shadow-android;
+
+// 10. BOTTONI - Semantica Button dettagliata
+$btn-padding-y: 0.5rem;
+$btn-padding-x: 1rem;
+$btn-font-family: $font-family-sans-serif;
+$btn-font-size: $font-size-base;
+$btn-line-height: $line-height-base;
+$btn-white-space: null;
+
+$btn-padding-y-sm: 0.25rem;
+$btn-padding-x-sm: 0.75rem;
+$btn-font-size-sm: $font-size-sm;
+
+$btn-padding-y-lg: 0.75rem;
+$btn-padding-x-lg: 1.5rem;
+$btn-font-size-lg: $font-size-lg;
+
+$btn-border-width: 2px;  // Aumentato per matching design
+$btn-border-radius: $border-radius-pill;  // Pill shape come nel design
+$btn-border-radius-sm: $border-radius-pill;
+$btn-border-radius-lg: $border-radius-pill;
+
+$btn-font-weight: $font-weight-medium;
+
+// Stati e transizioni
+$btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+$btn-hover-bg-shade-amount: 15%;
+$btn-hover-bg-tint-amount: 15%;
+$btn-hover-border-shade-amount: 20%;
+$btn-hover-border-tint-amount: 10%;
+$btn-active-bg-shade-amount: 20%;
+$btn-active-bg-tint-amount: 20%;
+$btn-active-border-shade-amount: 25%;
+$btn-active-border-tint-amount: 10%;
+
+// Colori bottoni Primary (blu scuro)
+$btn-primary-color: $white;                      // Button/Primary/Content
+$btn-primary-bg: $blue-900;                      // Button/Primary/Background-Default
+$btn-primary-border: $blue-900;
+$btn-primary-hover-color: $white;
+$btn-primary-hover-bg: $blue-700;                // Button/Primary/Background-Pressed
+$btn-primary-hover-border: $blue-700;
+$btn-primary-focus-shadow-rgb: 20, 19, 59;       // RGB values of $blue-900
+$btn-primary-active-color: $white;
+$btn-primary-active-bg: $blue-700;
+$btn-primary-active-border: $blue-700;
+$btn-primary-disabled-color: $gray-400;          // Button/Disabled/Content
+$btn-primary-disabled-bg: $gray-50;             // Button/Disabled/Background
+$btn-primary-disabled-border: $gray-50;         // Button/Disabled/Border
+
+// Colori bottoni Secondary (bianco con bordo)
+$btn-secondary-color: $blue-900;                // Button/Secondary/Content
+$btn-secondary-bg: $white;                      // Button/Secondary/Background-Default
+$btn-secondary-border: $blue-900;               // Button/Secondary/Border
+$btn-secondary-hover-color: $blue-900;
+$btn-secondary-hover-bg: $gray-100;             // Button/Secondary/Background-Pressed
+$btn-secondary-hover-border: $blue-900;
+$btn-secondary-focus-shadow-rgb: 223, 231, 234; // RGB values of $gray-100
+$btn-secondary-active-color: $blue-900;
+$btn-secondary-active-bg: $gray-100;
+$btn-secondary-active-border: $blue-900;
+$btn-secondary-disabled-color: $gray-400;
+$btn-secondary-disabled-bg: $gray-50;
+$btn-secondary-disabled-border: $gray-50;
+
+// Colori bottoni Danger
+$btn-danger-color: $white;                      // Button/Danger-Primary/Content
+$btn-danger-bg: $red-600;                       // Button/Danger-Primary/Background-Default
+$btn-danger-border: $red-600;
+$btn-danger-hover-color: $white;
+$btn-danger-hover-bg: $red-800;                 // Button/Danger-Primary/Background-Pressed
+$btn-danger-hover-border: $red-800;
+$btn-danger-focus-shadow-rgb: 196, 52, 52;      // RGB values of $red-600
+$btn-danger-active-color: $white;
+$btn-danger-active-bg: $red-800;
+$btn-danger-active-border: $red-800;
+$btn-danger-disabled-color: $gray-400;
+$btn-danger-disabled-bg: $gray-50;
+$btn-danger-disabled-border: $gray-50;
+
+// Link/Tertiary button
+$btn-link-color: $blue-900;                     // Button/Tertiary/Content-Default
+$btn-link-hover-color: $blue-500;               // Button/Tertiary/Content-Pressed
+$btn-link-disabled-color: $gray-400;            // Button/Disabled/Content
+$btn-link-decoration: none;
+$btn-link-hover-decoration: none;
+$btn-link-focus-shadow-rgb: 20, 19, 59;         // RGB values of $blue-900
+
+// Outline variants per Danger Secondary
+$btn-outline-danger-color: $red-600;            // Button/Danger-Secondary/Content
+$btn-outline-danger-border: $red-600;           // Button/Danger-Secondary/Border
+$btn-outline-danger-hover-bg: $gray-100;        // Button/Danger-Secondary/Background-Pressed
+$btn-outline-danger-hover-color: $red-600;
+$btn-outline-danger-hover-border: $red-600;
+
+// Success e Warning
+$btn-success-color: $white;
+$btn-success-bg: $green-800;
+$btn-success-border: $green-800;
+$btn-success-hover-color: $white;
+$btn-success-hover-bg: darken($green-800, 10%);
+$btn-success-hover-border: darken($green-800, 10%);
+
+// Warning non è utilizzato
+$btn-warning-color: $gray-700;
+$btn-warning-bg: $yellow-600;
+$btn-warning-border: $yellow-600;
+$btn-warning-hover-color: $gray-700;
+$btn-warning-hover-bg: darken($yellow-600, 10%);
+$btn-warning-hover-border: darken($yellow-600, 10%);
+
+// Info non è utilizzato
+$btn-info-color: $gray-700;
+$btn-info-bg: $blue-50;
+$btn-info-border: $blue-50;
+$btn-info-hover-color: $gray-700;
+$btn-info-hover-bg: darken($blue-50, 10%);
+$btn-info-hover-border: darken($blue-50, 10%);
+
+// Box shadow e focus
+$btn-box-shadow: none;  // Nessuna ombra di default nel design
+$btn-focus-width: 0.25rem;
+$btn-focus-box-shadow: 0 0 0 $btn-focus-width rgba($primary, 0.25);
+$btn-disabled-opacity: 1;  // Opacity 1 perché usiamo colori specifici
+$btn-active-box-shadow: none;
+
+// 11. FORMS
+$input-padding-y: 0.5rem;
+$input-padding-x: 0.75rem;
+$input-font-family: $font-family-sans-serif;
+$input-font-size: $font-size-base;
+$input-font-weight: $font-weight-normal;
+$input-line-height: $line-height-base;
+
+// Focus states shared between forms and buttons
+$input-btn-focus-color: rgba($primary, 0.25);
+$input-btn-focus-width: 0.2rem;
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color;
+
+$input-bg: $white;                       // Layer/Neutral/Background-Default
+$input-disabled-bg: $gray-50;            // Button/Disabled/Background
+$input-disabled-border-color: $gray-50;  // Button/Disabled/Border
+
+$input-color: $blue-900;                 // Content/Default
+$input-border-color: $gray-100;          // Separator/Default
+$input-border-width: $border-width;
+$input-box-shadow: inset 0 1px 2px rgba($black, 0.075);
+
+$input-border-radius: $border-radius;
+$input-border-radius-sm: $border-radius-sm;
+$input-border-radius-lg: $border-radius-lg;
+
+$input-focus-bg: $input-bg;
+$input-focus-border-color: $gray-200;    // Layer/Border-Highlight
+$input-focus-color: $input-color;
+$input-focus-width: 0.2rem;
+$input-focus-box-shadow: 0 0 0 $input-focus-width rgba($gray-200, 0.25);
+
+$input-placeholder-color: $gray-700;     // Content/Alternative
+$input-plaintext-color: $body-color;
+
+// Form validation - Semantica Layer/Border-Error
+$form-feedback-valid-color: $green-800;   // Content/Solved
+$form-feedback-invalid-color: $red-600;   // Content/Danger
+$form-feedback-icon-valid-color: $form-feedback-valid-color;
+$form-feedback-icon-invalid-color: $form-feedback-invalid-color;
+
+// Labels
+$form-label-margin-bottom: 0.5rem;
+$form-label-font-size: null;
+$form-label-font-style: null;
+$form-label-font-weight: $font-weight-medium;
+$form-label-color: $blue-900;            // Content/Default
+
+
+// 18. TABLES
+$table-cell-padding-y: 0.75rem;
+$table-cell-padding-x: 0.75rem;
+$table-cell-padding-y-sm: 0.25rem;
+$table-cell-padding-x-sm: 0.25rem;
+
+$table-cell-vertical-align: top;
+
+$table-color: $body-color;
+$table-bg: transparent;
+$table-accent-bg: transparent;
+
+$table-th-font-weight: null;
+
+$table-striped-color: $table-color;
+$table-striped-bg-factor: 0.05;
+$table-striped-bg: $gray-50;             // Layer/Variant1/Background-Default
+
+$table-active-color: $table-color;
+$table-active-bg-factor: 0.1;
+$table-active-bg: rgba($black, 0.075);
+
+$table-hover-color: $table-color;
+$table-hover-bg-factor: 0.075;
+$table-hover-bg: $gray-50;               // Layer/Variant1/Background-Pressed
+
+$table-border-factor: 0.1;
+$table-border-width: $border-width;
+$table-border-color: $gray-100;          // Separator/Default
+
+
+
+// 21. BREAKPOINTS
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// 22. CONTAINER WIDTHS
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Container padding
+$container-padding-x: 1rem;
+
+// 23. ENABLERS
+$enable-caret: true;
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-gradients: true;  // Abilitato per supportare i gradienti del design system
+$enable-transitions: true;
+$enable-reduced-motion: true;
+$enable-smooth-scroll: true;
+$enable-grid-classes: true;
+$enable-button-pointers: true;
+$enable-rfs: true;
+$enable-validation-icons: true;
+$enable-negative-margins: false;
+$enable-deprecation-messages: true;
+$enable-important-utilities: true;
