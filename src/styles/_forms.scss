@@ -26,13 +26,22 @@
   }
 }
 
+.form-label-invalid {
+  @extend .form-label;
+  color: $red-600;
+  
+  // Override del colore anche per required indicator quando invalid
+  &.required::after {
+    color: $red-800; // Più scuro per maggiore contrasto
+  }
+}
 // 2. FORM CONTROLS - Input fields principali
 .form-control {
   // Override delle dimensioni base
   padding: 0.75rem 1rem;              // Più spazio interno dal design
   font-size: $font-size-base;         // 16px 
   line-height: 1.5;
-  border: 1px solid $gray-200;        // Bordo più chiaro del default
+  border: 2px solid $gray-100;        // Bordo più chiaro del default
   border-radius: $border-radius;      // 8px
   background-color: $white;
   color: $blue-900;
@@ -40,15 +49,15 @@
 
   // Placeholder styling dal design
   &::placeholder {
-    color: $gray-400;                 // Più chiaro, come nel design
+    color: $gray-200;                 // Più chiaro, come nel design
     opacity: 1;
   }
 
   // Focus state - più sottile del default Bootstrap
   &:focus {
-    border-color: $blue-500;          // Blu più vivace per focus
+    border-color: $gray-200;          // Blu più vivace per focus
     outline: 0;
-    box-shadow: 0 0 0 2px rgba($blue-500, 0.1); // Shadow molto sottile
+    box-shadow: 0 0 0 2px rgba($gray-200, 0.1); // Shadow molto sottile
     background-color: $white;
   }
 
@@ -61,7 +70,7 @@
     opacity: 1;
     
     &::placeholder {
-      color: $gray-400;
+      color: $gray-200;
     }
   }
 
@@ -69,6 +78,10 @@
   &.is-invalid {
     border-color: $red-600;           // Content/Danger
     
+    &::placeholder{
+         color: $red-600;
+    }
+
     &:focus {
       border-color: $red-600;
       box-shadow: 0 0 0 2px rgba($red-600, 0.1);

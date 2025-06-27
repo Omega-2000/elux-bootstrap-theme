@@ -1,67 +1,45 @@
 import { defineConfig } from 'vite'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { resolve } from 'path'
 import classPrefix from 'postcss-class-prefix'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
-  // Entry point per il CSS
+  server: {
+    port: 3000,
+    open: true  // Apre automaticamente il browser
+  },
   build: {
-    lib: {
-      entry: 'src/main.scss',
-      name: 'EluxTheme',
-      fileName: 'main',
-      formats: ['es']
-    },
     outDir: 'dist',
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'), // Entry point HTML
+        // Se hai altri entry point CSS/JS specifici, aggiungili qui
+      },
       output: {
-        assetFileNames: '[name].[ext]'
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith('.css')) {
+            return '[name].css'
+          }
+          return '[name].[ext]'
+        }
       }
-    },
-    cssCodeSplit: false,
-    minify: false // Disabilita minificazione per debug
+    }
   },
-  
-  // Server di sviluppo
-  server: {
-    open: '/index.html', // Apre index.html
-    port: 3000,
-    host: true
+  css: {
+    postcss: {
+      plugins: [
+        classPrefix('o2000__')
+      ]
+    }
   },
-  
-  // Server preview
-  preview: {
-    port: 3000,
-    host: true,
-    open: '/index.html' // Apre index.html anche nel preview
-  },
-  
-  // Plugin
   plugins: [
     viteStaticCopy({
       targets: [
         {
           src: 'src/styles/fontawesome/fonts/**/*',
           dest: 'fonts'
-        },
-        {
-          src: 'index.html',
-          dest: ''
         }
       ]
     })
-  ],
-  
-  // CSS processing
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler'
-      }
-    },
-    postcss: {
-      plugins: [
-       classPrefix('o2000__')
-      ]
-    }
-  }
+  ]
 })
