@@ -1,0 +1,409 @@
+
+
+// ===================================
+// FORM
+// ===================================
+
+// 1. FORM LABELS - Design System matching
+.form-label {
+  margin-bottom: 0.5rem;
+  font-size: $font-size-sm;           // 14px per label più discrete
+  font-weight: $font-weight-medium;   // 500 per leggibilità
+  color: $blue-900;                   // Content/Default
+  line-height: 1.2;
+
+  // Label required indicator
+  &.required::after {
+    content: " *";
+    color: $red-600;
+  }
+
+  // Label metadata (come "Min Max" nel design)
+  &.metadata {
+    font-size: 0.75rem;               // 12px per metadata
+    color: $gray-700;                 // Content/Alternative
+    font-weight: $font-weight-normal;
+  }
+}
+
+// 2. FORM CONTROLS - Input fields principali
+.form-control {
+  // Override delle dimensioni base
+  padding: 0.75rem 1rem;              // Più spazio interno dal design
+  font-size: $font-size-base;         // 16px 
+  line-height: 1.5;
+  border: 1px solid $gray-200;        // Bordo più chiaro del default
+  border-radius: $border-radius;      // 8px
+  background-color: $white;
+  color: $blue-900;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  // Placeholder styling dal design
+  &::placeholder {
+    color: $gray-400;                 // Più chiaro, come nel design
+    opacity: 1;
+  }
+
+  // Focus state - più sottile del default Bootstrap
+  &:focus {
+    border-color: $blue-500;          // Blu più vivace per focus
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba($blue-500, 0.1); // Shadow molto sottile
+    background-color: $white;
+  }
+
+  // Disabled state
+  &:disabled,
+  &[readonly] {
+    background-color: $gray-50;       // Layer/Variant1/Background-Default
+    border-color: $gray-100;
+    color: $gray-600;
+    opacity: 1;
+    
+    &::placeholder {
+      color: $gray-400;
+    }
+  }
+
+  // Error state
+  &.is-invalid {
+    border-color: $red-600;           // Content/Danger
+    
+    &:focus {
+      border-color: $red-600;
+      box-shadow: 0 0 0 2px rgba($red-600, 0.1);
+    }
+  }
+
+  // Success state
+  &.is-valid {
+    border-color: $green-800;         // Content/Solved
+    
+    &:focus {
+      border-color: $green-800;
+      box-shadow: 0 0 0 2px rgba($green-800, 0.1);
+    }
+  }
+}
+
+// 3. FORM SELECT - Dropdown personalizzato
+.form-select {
+  padding: 0.75rem 2.5rem 0.75rem 1rem; // Spazio per la freccia
+  font-size: $font-size-base;
+  line-height: 1.5;
+  border: 1px solid $gray-200;
+  border-radius: $border-radius;
+  background-color: $white;
+  color: $blue-900;
+  cursor: pointer;
+  
+  // Custom arrow dal design
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23606C7E' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 12px;
+  
+  &:focus {
+    border-color: $blue-500;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba($blue-500, 0.1);
+  }
+
+  &:disabled {
+    background-color: $gray-50;
+    border-color: $gray-100;
+    color: $gray-600;
+    cursor: not-allowed;
+  }
+
+  // Multiple select styling
+  &[multiple] {
+    padding-right: 1rem;
+    background-image: none;
+    height: auto;
+  }
+}
+
+// 4. CHECKBOX E RADIO - Design moderno
+.form-check {
+  margin-bottom: 0.5rem;
+  
+  .form-check-input {
+    width: 1.25rem;                   // 20px dal design
+    height: 1.25rem;
+    margin-top: 0.125rem;             // Allineamento con testo
+    border: 2px solid $gray-200;     // Bordo più spesso
+    border-radius: 0.25rem;          // 4px per checkbox
+    background-color: $white;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    &:focus {
+      border-color: $blue-500;
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba($blue-500, 0.1);
+    }
+
+    &:checked {
+      background-color: $blue-900;    // Button/Primary/Background-Default
+      border-color: $blue-900;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    // Radio button styling
+    &[type="radio"] {
+      border-radius: 50%;             // Cerchio perfetto
+      
+      &:checked {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23FFFFFF'/%3e%3c/svg%3e");
+      }
+    }
+  }
+
+  .form-check-label {
+    margin-left: 0.5rem;
+    font-size: $font-size-base;
+    color: $blue-900;
+    cursor: pointer;
+    line-height: 1.25rem;             // Allineamento con checkbox
+  }
+}
+
+// 5. FORM SWITCH - Toggle personalizzato
+.form-switch {
+  .form-check-input {
+    width: 2.5rem;                    // 40px per switch più largo
+    height: 1.25rem;                  // 20px
+    border-radius: 1.25rem;           // Pill shape
+    background-color: $gray-200;
+    border: none;
+    cursor: pointer;
+    
+    // Custom switch handle
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28255, 255, 255, 1%29'/%3e%3c/svg%3e");
+    background-position: left center;
+    background-size: contain;
+    
+    &:checked {
+      background-color: $blue-900;    // Active color
+      background-position: right center;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($blue-500, 0.1);
+    }
+  }
+}
+
+// 6. RANGE SLIDER - Design personalizzato
+.form-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1.5rem;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+
+  // Track styling
+  &::-webkit-slider-track {
+    width: 100%;
+    height: 4px;
+    background: $gray-200;
+    border-radius: 2px;
+    border: none;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    background: $gray-200;
+    border-radius: 2px;
+    border: none;
+  }
+
+  // Thumb styling - matching design
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $blue-900;            // Handle color
+    border: 2px solid $white;
+    box-shadow: 0 2px 4px rgba($black, 0.2);
+    cursor: pointer;
+    margin-top: -8px;                 // Center on track
+  }
+
+  &::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $blue-900;
+    border: 2px solid $white;
+    box-shadow: 0 2px 4px rgba($black, 0.2);
+    cursor: pointer;
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+    
+    &::-webkit-slider-thumb {
+      box-shadow: 0 0 0 2px rgba($blue-500, 0.2), 0 2px 4px rgba($black, 0.2);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// 7. FORM VALIDATION FEEDBACK
+.valid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: $font-size-sm;           // 14px
+  color: $green-800;                  // Content/Solved
+  line-height: 1.4;
+}
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: $font-size-sm;
+  color: $red-600;                    // Content/Danger
+  line-height: 1.4;
+}
+
+// Show feedback when validation classes are present
+.was-validated .form-control:valid ~ .valid-feedback,
+.form-control.is-valid ~ .valid-feedback,
+.was-validated .form-select:valid ~ .valid-feedback,
+.form-select.is-valid ~ .valid-feedback {
+  display: block;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-feedback,
+.was-validated .form-select:invalid ~ .invalid-feedback,
+.form-select.is-invalid ~ .invalid-feedback {
+  display: block;
+}
+
+// 8. FORM TEXT - Caption/helper text
+.form-text {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;                 // 12px for captions
+  color: $gray-700;                   // Content/Alternative
+  line-height: 1.4;
+
+  // Error state
+  &.text-danger {
+    color: $red-600;
+  }
+
+  // Success state
+  &.text-success {
+    color: $green-800;
+  }
+}
+
+// 9. INPUT GROUP - Componenti combinati
+.input-group {
+  .input-group-text {
+    background-color: $gray-50;       // Background neutro
+    border: 1px solid $gray-200;
+    color: $gray-700;
+    font-size: $font-size-base;
+    
+    // Icon styling in input groups
+    .fak, .fa {
+      color: $gray-600;
+    }
+  }
+  
+  .form-control {
+    &:not(:first-child) {
+      border-left: none;
+    }
+    
+    &:not(:last-child) {
+      border-right: none;
+    }
+  }
+}
+
+// 10. FLOATING LABELS - Design moderno
+.form-floating {
+  > .form-control,
+  > .form-select {
+    height: calc(3.5rem + 2px);       // Altezza maggiore per label floating
+    line-height: 1.25;
+    padding: 1rem 1rem 0.25rem;      // Spazio per label sopra
+  }
+
+  > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 1rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    color: $gray-600;
+    font-size: $font-size-base;
+  }
+
+  > .form-control:focus ~ label,
+  > .form-control:not(:placeholder-shown) ~ label,
+  > .form-select ~ label {
+    opacity: 0.65;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    color: $blue-500;
+  }
+}
+
+// 11. RESPONSIVE ADJUSTMENTS
+@media (max-width: 768px) {
+  .form-control,
+  .form-select {
+    font-size: 16px;                  // Previene zoom su iOS
+  }
+  
+  .form-check-input {
+    width: 1.125rem;                  // Slightly smaller on mobile
+    height: 1.125rem;
+  }
+}
+
+// 12. UTILITY CLASSES per forme specifiche
+.form-control-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: $font-size-sm;
+}
+
+.form-control-lg {
+  padding: 1rem 1.25rem;
+  font-size: $font-size-lg;
+}
+
+// Error state input con icona
+.form-control.error-with-icon {
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23C43434' d='M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8S12.42 0 8 0zm4.3 10.3L10.3 12.3 8 10l-2.3 2.3L3.7 10.3 6 8 3.7 5.7 5.7 3.7 8 6l2.3-2.3 2 2L10 8l2.3 2.3z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+}

@@ -1,13 +1,20 @@
 {
+  "type": "module",
   "scripts": {
     "copy-fonts": "cpx \"src/styles/fontawesome/fonts/**/*\" \"dist/fonts/\"",
     "build": "npm run build-css && npm run copy-fonts",
-    "dev": "vite",
     "build-css": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev": "vite --host",
+    "dev-open": "vite --host --open",
+    "watch": "vite build --watch",
+    "serve": "vite preview --host --port 3000",
+    "dev-full": "concurrently \"npm run watch\" \"npm run serve\" \"npm run copy-fonts\"",
+    "start": "npm run dev-full"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.0",
     "cpx2": "^8.0.0",
     "postcss": "^8.5.6",
     "postcss-class-prefix": "^0.3.0",
